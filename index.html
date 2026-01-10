@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Motion Calendar — A Universe of Motion</title>
+    <meta name="description" content="A foundational framework proposing motion as the primitive constituent of reality, with the Planck constant as its fundamental scale.">
+    <meta name="keywords" content="motion ontology, foundations of physics, Planck constant, quantum mechanics, divergent series, Ramanujan, process philosophy">
+    <meta name="author" content="Motion Calendar Project">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Motion Calendar">
+    <meta property="og:description" content="Motion as the fundamental constituent of reality. Six functions. One scale. Complete structure.">
+    <meta property="og:type" content="website">
+    
+    <!-- Timestamp for priority -->
+    <meta name="date" content="2026-01-09">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #18181b;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #d4a574;
+            --accent-dim: #a67c4c;
+            --border: #27272a;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+        
+        .header-meta {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .core-equation {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 1.5rem 2rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+        }
+        
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--text-primary);
+        }
+        
+        /* The Key Insight box */
+        .insight-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .insight-box h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        
+        /* Equation displays */
+        .equation {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            color: var(--text-primary);
+            overflow-x: auto;
+        }
+        
+        /* Function table */
+        .function-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .function-table th,
+        .function-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .function-table th {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .function-table td {
+            color: var(--text-secondary);
+        }
+        
+        .function-table td:first-child {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .function-table tr:hover {
+            background: var(--bg-secondary);
+        }
+        
+        /* Papers list */
+        .papers-list {
+            list-style: none;
+        }
+        
+        .papers-list li {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .papers-list li:hover {
+            border-color: var(--accent-dim);
+            transform: translateX(4px);
+        }
+        
+        .papers-list a {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .paper-number {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+        
+        .paper-title {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin: 0.25rem 0;
+        }
+        
+        .paper-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        /* Connections section */
+        .connection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 600px) {
+            .connection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .connection-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .connection-card h4 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .connection-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .timestamp {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .license {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .license a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Utility */
+        .muted {
+            color: var(--text-muted);
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+        
+        blockquote {
+            border-left: 2px solid var(--accent-dim);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        /* Download button */
+        .download-btn {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+        }
+        
+        .download-btn:hover {
+            background: var(--accent-dim);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-meta">Foundations of Physics • First Published January 2026</div>
+        <h1>The Motion Calendar</h1>
+        <p class="subtitle">A Universe of Motion, Rather Than in Motion</p>
+        <div class="core-equation">1 + 2 + 3 + 4 + ⋯ = −1/12 → h → Reality</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#thesis">Thesis</a></li>
+            <li><a href="#key-insight">Key Insight</a></li>
+            <li><a href="#functions">Six Functions</a></li>
+            <li><a href="#papers">Papers</a></li>
+            <li><a href="#implications">Implications</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="thesis">
+            <h2>The Central Claim</h2>
+            <p>
+                <strong>Motion is not a property of reality. Motion is reality's fundamental constituent.</strong>
+            </p>
+            <p>
+                Objects, fields, particles, and information are not things that move. They are stable patterns <em>of</em> motion. What we call "matter" and "energy" are structured expressions of motion itself. Time is not a container; it is the index by which motion's existence is evaluated. Space is not a stage; it emerges from motion's directional differentiation.
+            </p>
+            <p>
+                This framework—the Motion Calendar—provides a complete descriptive basis for physical and informational change through six fundamental functions of motion: <strong>Heat, Polarity, Existence, Righteousness, Order, and Movement</strong>.
+            </p>
+            <p>
+                The Planck constant h is not an arbitrary unit. It is the <em>scale</em> of this map. One coherent motion unit equals one quantum of action.
+            </p>
+        </section>
+        
+        <section id="key-insight">
+            <div class="insight-box">
+                <h3>The Key Insight</h3>
+                <p>
+                    The Ramanujan summation of the natural numbers:
+                </p>
+                <div class="equation">
+                    ζ(−1) = 1 + 2 + 3 + 4 + 5 + ⋯ = −1/12
+                </div>
+                <p>
+                    This is not a trick. It is the <strong>structural constant of arithmetic itself</strong>. The number 12 emerges from consistency requirements on divergent processes. It appears throughout physics—not because we chose it, but because it's forced.
+                </p>
+                <p>
+                    <strong>12 directions. 6 divisors. 6 motion functions.</strong>
+                </p>
+                <p>
+                    The divisors of 12 are {1, 2, 3, 4, 6, 12}. Six divisors. Six motion functions. This is the complete structural hierarchy of motion, from scalar magnitude to full spatial expression.
+                </p>
+                <p>
+                    A countable infinity is logically equivalent to 1. The infinite sum doesn't produce infinity—it reveals what unity <em>contains</em>. And unity contains 12-fold structure.
+                </p>
+            </div>
+        </section>
+        
+        <section id="functions">
+            <h2>The Six Functions of Motion</h2>
+            <p>
+                Each function corresponds to a divisor of 12. Each introduces a new structural capacity. None is reducible to the others.
+            </p>
+            <table class="function-table">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Divisor</th>
+                        <th>Capacity</th>
+                        <th>Physical Correspondence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heat</td>
+                        <td>1</td>
+                        <td>Magnitude exists</td>
+                        <td>Quantized action (ℏ)</td>
+                    </tr>
+                    <tr>
+                        <td>Polarity</td>
+                        <td>2</td>
+                        <td>Opposition exists</td>
+                        <td>Charge, spin, CPT</td>
+                    </tr>
+                    <tr>
+                        <td>Existence</td>
+                        <td>3</td>
+                        <td>Instantiation in time</td>
+                        <td>Measurement, occupation</td>
+                    </tr>
+                    <tr>
+                        <td>Alignment</td>
+                        <td>4</td>
+                        <td>Relational correctness</td>
+                        <td>Phase coherence, interference</td>
+                    </tr>
+                    <tr>
+                        <td>Order</td>
+                        <td>6</td>
+                        <td>Structural consistency</td>
+                        <td>Fock space, Robinson arithmetic</td>
+                    </tr>
+                    <tr>
+                        <td>Movement</td>
+                        <td>12</td>
+                        <td>Directional differentiation</td>
+                        <td>Non-commutative operators, space</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="muted" style="font-size: 0.9rem;">
+                Note: "Righteousness" in the original papers has been renamed "Alignment" here. The function is purely structural—frame-relative evaluation—with no moral content.
+            </p>
+        </section>
+        
+        <section id="connections">
+            <h2>Why This Works</h2>
+            
+            <h3>The No-Cloning Theorem</h3>
+            <p>
+                Quantum mechanics forbids copying arbitrary states. This isn't a technological limitation—it's structural. The universe prohibits exact repetition at the fundamental level.
+            </p>
+            <p>
+                Mathematically: 1 + 1 + 1 + ⋯ has no finite regularization. Pure repetition yields no structure.
+            </p>
+            <p>
+                But 1 + 2 + 3 + ⋯ regularizes to −1/12. <strong>Differentiation produces structure; repetition doesn't.</strong>
+            </p>
+            <p>
+                No-cloning and ζ(−1) = −1/12 are the same law expressed in physics and mathematics.
+            </p>
+            
+            <h3>Incompleteness as a Level Violation</h3>
+            <p>
+                Gödel's incompleteness theorem shows that arithmetic contains true statements unprovable within the system. Standard interpretation: logic has limits.
+            </p>
+            <p>
+                Motion Calendar interpretation: <strong>logic operates at the Alignment level (divisor 4). Arithmetic operates at the Order level (divisor 6).</strong> Asking logic to fully capture arithmetic is asking a lower function to do a higher function's work.
+            </p>
+            <p>
+                Incompleteness isn't a flaw in mathematics. It's architecture. The gap between 4 and 6 is permanent and necessary.
+            </p>
+            
+            <div class="connection-grid">
+                <div class="connection-card">
+                    <h4>Casimir Effect</h4>
+                    <p>Vacuum energy regularized by ζ(−1). The −1/12 produces finite, measurable force.</p>
+                </div>
+                <div class="connection-card">
+                    <h4>String Theory</h4>
+                    <p>Critical dimension D = 26 = 2 + 24 = 2 + 2(12). The worldsheet plus 12-structure doubled.</p>
+                </div>
+                <div class="connection-card">
+                    <h4>Standard Model</h4>
+                    <p>12 gauge bosons before symmetry breaking. 8 gluons + 3 weak + 1 photon.</p>
+                </div>
+                <div class="connection-card">
+                    <h4>Modular Forms</h4>
+                    <p>Weight 12 is special (discriminant Δ). The j-invariant's structure encodes 12.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="papers">
+            <h2>The Papers</h2>
+            <p>
+                The complete framework is developed across seven papers. Each function is treated independently, with formal definitions and mathematical structure.
+            </p>
+            <ul class="papers-list">
+                <li>
+                    <a href="papers/0-universe-of-motion.html">
+                        <span class="paper-number">Paper 0</span>
+                        <div class="paper-title">A Universe of Motion Rather Than in Motion</div>
+                        <div class="paper-desc">The ontological foundation. Why motion must be primitive.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/1-heat.html">
+                        <span class="paper-number">Paper 1</span>
+                        <div class="paper-title">Heat — Magnitude of Motion</div>
+                        <div class="paper-desc">Pure quantity. The coherent motion unit. Algebra of magnitude.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/2-polarity.html">
+                        <span class="paper-number">Paper 2</span>
+                        <div class="paper-title">Polarity — Opposing Motion</div>
+                        <div class="paper-desc">Opposition without direction. Conservation without cancellation.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/3-existence.html">
+                        <span class="paper-number">Paper 3</span>
+                        <div class="paper-title">Existence — Motion in Time</div>
+                        <div class="paper-desc">Instantiation. When potential becomes actual. Time as index.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/4-alignment.html">
+                        <span class="paper-number">Paper 4</span>
+                        <div class="paper-title">Alignment — Mapping Motion</div>
+                        <div class="paper-desc">Relational correctness. Frame-relative evaluation. Logic as threshold.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/5-order.html">
+                        <span class="paper-number">Paper 5</span>
+                        <div class="paper-title">Order — Motion of Structure</div>
+                        <div class="paper-desc">Robinson arithmetic. Structural consistency without induction.</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="papers/6-movement.html">
+                        <span class="paper-number">Paper 6</span>
+                        <div class="paper-title">Movement — Motion of Orientation</div>
+                        <div class="paper-desc">Twelve directions. Non-commutative structure. Space emerges.</div>
+                    </a>
+                </li>
+            </ul>
+            <p style="margin-top: 2rem;">
+                <a href="papers/Motion_Calendar_Complete.pdf" class="download-btn">Download Complete PDF</a>
+            </p>
+        </section>
+        
+        <section id="implications">
+            <h2>Implications</h2>
+            
+            <h3>For Physics</h3>
+            <p>
+                Quantum mechanics isn't strange—it's <em>obviously correct</em>. It's the only consistent way to build a world with magnitude, opposition, existence, alignment, order, and direction. The "weirdness" comes from expecting classical structure at a level where it hasn't yet emerged.
+            </p>
+            
+            <h3>For Mathematics</h3>
+            <p>
+                The divergent series isn't a quirk to be regularized away—it's revealing structure. Mathematics and physics share a common root in structural necessity. The "unreasonable effectiveness" dissolves: they're the same thing viewed differently.
+            </p>
+            
+            <h3>For Information</h3>
+            <p>
+                Information is not imposed on reality from outside. It is motion's self-differentiation. Every quantum of action is unique (no-cloning), permanent (unitarity), and distinguishable (has identity).
+            </p>
+            
+            <h3>For Consciousness</h3>
+            <p>
+                If logic emerges from phase coherence, then logical reasoning requires specific physical conditions. Consciousness isn't substrate-independent—it requires the coherence structure that generates logical capacity. This connects to, and extends from, earlier work on consciousness that led to the Motion Calendar framework.
+            </p>
+            
+            <hr>
+            
+            <blockquote>
+                "The universe computes with originals only."
+            </blockquote>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="timestamp">
+                First published: January 9, 2026<br>
+                Document hash and archive links forthcoming
+            </div>
+            <p class="license">
+                This work is released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0</a>.<br>
+                You may use, share, and build upon it—with attribution.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
