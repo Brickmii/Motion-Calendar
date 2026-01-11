@@ -550,7 +550,7 @@ resize(){const wrap=this.canvas.parentElement;this.canvas.width=wrap.clientWidth
 togglePause(){this.paused=!this.paused;document.getElementById('btn-pause').textContent=this.paused?'▶ Play':'⏸ Pause';document.getElementById('btn-pause').classList.toggle('active',this.paused);document.getElementById('sim-paused').classList.toggle('visible',this.paused)}
 reset(){this.engine=new Engine(this.canvas.width,this.canvas.height);E.id=0;for(let i=0;i<40;i++)this.engine.spawn();this.selId=null}
 spawn(){this.engine.spawn()}
-toggleVol(){this.showVol=!this.showVol;document.getElementById('volume-section').style.display=this.showVol?'block':'none';document.getElementById('btn-volume').classList.toggle('active',this.showVol)}
+toggleVol(){this.showVol=!this.showVol;document.getElementById('volume-section').style.display=this.showVol?'block':'none';document.getElementById('btn-volume').classList.toggle('active',this.showVol);if(this.showVol){setTimeout(()=>{this.volCanvas.width=this.volCanvas.offsetWidth||240;this.volCanvas.height=this.volCanvas.offsetHeight||160},10)}}
 click(ev){const r=this.canvas.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;let closest=null,cd=30;for(const e of this.engine.ents){const d=Math.sqrt((e.pos.x-x)**2+(e.pos.y-y)**2);if(d<cd){cd=d;closest=e}}this.selId=closest?closest.id:null}
 color(e){const b=SC[e.stage],f=Math.min(1,e.heat/2),br=0.3+0.7*f;return`rgb(${b[0]*br|0},${b[1]*br|0},${b[2]*br|0})`}
 radius(e){return 4+4*Math.min(2,e.heat)}
