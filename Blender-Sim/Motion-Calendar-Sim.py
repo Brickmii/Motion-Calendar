@@ -136,10 +136,17 @@ def setup_render_settings():
     scene.render.resolution_x = 1920
     scene.render.resolution_y = 1080
 
-    if 'BLENDER_EEVEE_NEXT' in dir(bpy.types):
-        scene.render.engine = 'BLENDER_EEVEE_NEXT'
-    else:
-        scene.render.engine = 'BLENDER_EEVEE'
+    # Blender 4.2+ renamed EEVEE to BLENDER_EEVEE_NEXT; 4.x uses BLENDER_EEVEE
+    eevee_set = False
+    for engine_id in ('BLENDER_EEVEE_NEXT', 'BLENDER_EEVEE'):
+        try:
+            scene.render.engine = engine_id
+            eevee_set = True
+            break
+        except TypeError:
+            continue
+    if not eevee_set:
+        scene.render.engine = 'CYCLES'
 
     if not bpy.context.scene.world:
         bpy.context.scene.world = bpy.data.worlds.new("World")
