@@ -6,7 +6,7 @@
     <title>The Motion Calendar — A Universe of Motion</title>
     <meta name="description" content="A foundational framework proposing motion as the primitive constituent of reality, with the Planck constant as its fundamental scale.">
     <meta name="keywords" content="motion ontology, foundations of physics, Planck constant, quantum mechanics, divergent series, Ramanujan, process philosophy">
-    <meta name="author" content="Motion Calendar Project">
+    <meta name="author" content="Ian McClenathan">
     
     <!-- Open Graph -->
     <meta property="og:title" content="The Motion Calendar">
@@ -331,6 +331,9 @@
             margin-bottom: 0.5rem;
         }
         
+        .connection-card h4 a { color: inherit; text-decoration: none; }
+        .connection-card h4 a:hover { text-decoration: underline; }
+
         .connection-card p {
             font-size: 0.95rem;
             margin-bottom: 0;
@@ -366,6 +369,18 @@
             text-decoration: none;
         }
         
+        @media (max-width: 600px) {
+            body { font-size: 17px; }
+            header { padding: 3rem 1rem 2rem; }
+            h1 { font-size: 2.4rem; }
+            .core-equation { font-size: 0.85rem; padding: 0.75rem 1rem; max-width: 100%; }
+            main { padding: 3rem 1rem; }
+            nav { padding: 1rem; }
+            .function-table { display: block; overflow-x: auto; font-size: 0.85rem; }
+            .function-table th, .function-table td { padding: 0.6rem; }
+            .sim-sidebar { min-width: 0; }
+        }
+
         /* Utility */
         .muted {
             color: var(--text-muted);
@@ -419,8 +434,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.97);
             z-index: 10000;
         }
@@ -507,12 +522,22 @@
             font-weight: 600;
             display: none;
         }
-        .sim-paused.visible { display: block; }
+        .sim-intro { font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem; }
+        .sim-log { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 0.6rem; line-height: 1.6; min-height: 6em; }
+        .sim-log div:first-child { color: var(--accent); }
+        #sim-diamond { display: block; background: var(--bg-tertiary); border: 1px solid var(--border); }
+        .sim-legend { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.6; }
+        #sim-canvas { touch-action: none; cursor: crosshair; }
+        @media (max-width: 700px) {
+            .sim-container { flex-direction: column; }
+            .sim-canvas-wrap { flex: none; height: 55vh; }
+            .sim-sidebar { width: 100%; flex: 1; border-left: none; border-top: 1px solid var(--border); padding: 1rem; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-meta">Foundations of Physics • First Published January 2026</div>
+        <div class="header-meta">Foundations of Physics • Ian McClenathan • First Published January 2026 • Updated October 2026</div>
         <h1>The Motion Calendar</h1>
         <p class="subtitle">A Universe of Motion, Rather Than in Motion</p>
         <div class="core-equation">1 + 2 + 3 + 4 + ⋯ = −1/12 → h → Reality</div>
@@ -523,8 +548,10 @@
             <li><a href="#thesis">Thesis</a></li>
             <li><a href="#key-insight">Key Insight</a></li>
             <li><a href="#functions">Six Functions</a></li>
+            <li><a href="#shape">One Shape</a></li>
             <li><a href="#papers">Papers</a></li>
             <li><a href="#implications">Implications</a></li>
+            <li><a href="#next">Where It Led</a></li>
             <li><a href="#" class="sim-link" id="open-sim">▶ Live Simulation</a></li>
         </ul>
     </nav>
@@ -563,6 +590,9 @@
                 </p>
                 <p>
                     The divisors of 12 are {1, 2, 3, 4, 6, 12}. Six divisors. Six motion functions. This is the complete structural hierarchy of motion, from scalar magnitude to full spatial expression.
+                </p>
+                <p>
+                    Read through entropy (Paper 7), −1/12 is the <strong>entropic bound</strong>: the finite cap that keeps accumulation inside the 12-frame. The sign is the constraint working against accumulation. The 12 is the full count of directions it is spread across.
                 </p>
                 <p>
                     A countable infinity is logically equivalent to 1. The infinite sum doesn't produce infinity—it reveals what unity <em>contains</em>. And unity contains 12-fold structure.
@@ -625,6 +655,67 @@
             </table>
         </section>
         
+        <section id="shape">
+            <h2>One Shape, Six Stages</h2>
+            <p>
+                The six functions are not six separate things. They are the six stages of one shape as it grows:
+            </p>
+            <blockquote>
+                "The center of the shape starts at the 45th and becomes a point, then a line, then a triangle, then a square, then a triangle in a square, then it rotates adding 44 more, and this continues until stop or reverse."
+            </blockquote>
+            <table class="function-table">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Stage</th>
+                        <th>Points</th>
+                        <th>What appears</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Heat</td><td>Point</td><td>1</td><td>Magnitude without direction</td></tr>
+                    <tr><td>Polarity</td><td>Line</td><td>2</td><td>+ and −</td></tr>
+                    <tr><td>Existence</td><td>Triangle</td><td>3</td><td>a start, b intermediate, c result: time enters</td></tr>
+                    <tr><td>Righteousness</td><td>Square</td><td>4</td><td>Four quadrants</td></tr>
+                    <tr><td>Order</td><td>Triangle in a square</td><td>5</td><td>The triangle and square share one center; the frame closes</td></tr>
+                    <tr><td>Movement</td><td>Rotation</td><td>—</td><td>44 positions, then the 45th</td></tr>
+                </tbody>
+            </table>
+            <h3>The rotation and the 45th</h3>
+            <p>
+                The unit of a turn is the <strong>ray</strong>, π/45 (4°), the smallest possible choice. A rotation passes 44 positions of one ray each. The 45th lands on π, where e<sup>iπ</sup> = i² = −1. That −1 does not end the shape. It becomes the <strong>point of the next shape</strong>, and growth starts again.
+            </p>
+            <p>
+                <strong>It is −1 that makes a system addressable.</strong> An address needs a locality, and to define a locality you must change a part of it. So 44 = 45 − 1, and the gap of one is where structure lives.
+            </p>
+            <p>
+                The rotation ends in one of two ways: <strong>stop</strong> (0), when the shape holds in equilibrium, or <strong>reverse</strong> (0 − 1), when it turns to the negative direction.
+            </p>
+            <h3>The nest and the bloom</h3>
+            <p>
+                After Order, the shape keeps adding sides, and each polygon rotates inside the next: the triangle in the square, the square in the pentagon, the pentagon in the hexagon, and on up. The 44th is the last position the topology can hold: <strong>44 relations among 45 points</strong>. The 45th blooms into the next block of the fractal.
+            </p>
+            <p>
+                A block does not finish by itself. It holds 265 positions and 45 rotations, and its positions fill only as <strong>interaction generates information</strong>. Adding a side is a choice: familiar information is met by rotating within the nest (habit), and new information can be given a new side (effort) or declined. A block blooms when a new block is needed, and the information that calls for it shapes the new one.
+            </p>
+            <p>
+                These quantities are expressed in four dimensions, w, x, y and z. In the quaternion w is 1, but it can be any whole defined by its context.
+            </p>
+            <p>
+                <a href="#" class="download-btn" id="open-sim-2">▶ Fill a block yourself</a>
+            </p>
+            <h3>The same count in the shells</h3>
+            <p>
+                Grow a diamond outward from a center, one shell at a time. Shell n holds 4n cells, labelled a, b, c, d in turn. It closes at 12 shells, three passes of the four labels (3 × 4 = 12). The outer shell holds 44. Pair each shell with its mirror (shell r with shell 11 − r):
+            </p>
+            <div class="equation">
+                265 = 45 + 5 × 44
+            </div>
+            <p>
+                The pair holding the center has 45 cells. Every other pair has exactly 44.
+            </p>
+        </section>
+
         <section id="connections">
             <h2>Why This Works</h2>
             
@@ -676,7 +767,7 @@
         <section id="papers">
             <h2>The Papers</h2>
             <p>
-                The complete framework is developed across seven papers. Each function is treated independently, with formal definitions and mathematical structure.
+                The complete framework is developed across eight papers. Each function is treated independently, with formal definitions and mathematical structure.
             </p>
             <ul class="papers-list">
                 <li>
@@ -686,7 +777,6 @@
                         <div class="paper-desc">The ontological foundation. Why motion must be primitive.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/0. A Universe of Motion rather than in Motion.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/0. A Universe of Motion rather than in Motion.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -697,7 +787,7 @@
                         <div class="paper-desc">Pure quantity. The coherent motion unit. Algebra of magnitude.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/1. Heat.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Heat.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/1. Heat.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -708,7 +798,7 @@
                         <div class="paper-desc">Opposition without direction. Conservation without cancellation.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/2. Polarity.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Polarity.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/2. Polarity.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -719,7 +809,7 @@
                         <div class="paper-desc">Instantiation. When potential becomes actual. Time as index.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/3. Existence.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Existence.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/3. Existence.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -730,7 +820,7 @@
                         <div class="paper-desc">Relational correctness. Frame-relative evaluation. Logic as threshold.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/4. Righteousness.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Righteousness.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/4. Righteousness.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -741,7 +831,7 @@
                         <div class="paper-desc">Robinson arithmetic. Structural consistency without induction.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/5. Order.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Order.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/5. Order.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
@@ -752,8 +842,18 @@
                         <div class="paper-desc">Twelve directions. Non-commutative structure. Space emerges.</div>
                     </a>
                     <div class="download-links">
-                        <a href="papers/6. Movement.pdf" class="download-btn" download>PDF</a>
+                        <a href="papers/Movement.pdf" class="download-btn" download>PDF</a>
                         <a href="papers/6. Movement.docx" class="download-btn" download>DOCX</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="papers/7-entropy.html">
+                        <span class="paper-number">Paper 7</span>
+                        <div class="paper-title">Entropy — Motion into Systems</div>
+                        <div class="paper-desc">Degrees of freedom. −1/12 as the entropic bound. φ as heat's self-similar scaling.</div>
+                    </a>
+                    <div class="download-links">
+                        <a href="papers/7. Entropy.docx" class="download-btn" download>DOCX</a>
                     </div>
                 </li>
             </ul>
@@ -791,13 +891,29 @@
                 "The universe computes with originals only."
             </blockquote>
         </section>
+        <section id="next">
+            <h2>Where It Led</h2>
+            <p>
+                The Motion Calendar was the start. The work has continued since January 2026:
+            </p>
+            <div class="connection-grid">
+                <div class="connection-card">
+                    <h4><a href="https://oceanfrommotion.com" target="_blank" rel="noopener">Ocean From Motion</a></h4>
+                    <p>The manuscript built on the Motion Calendar.</p>
+                </div>
+                <div class="connection-card">
+                    <h4><a href="https://projectpbai.org" target="_blank" rel="noopener">Project PBAI</a></h4>
+                    <p>An AI that chooses by heat and equilibrium, built from these functions.</p>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer>
         <div class="footer-content">
             <div class="timestamp">
-                First published: January 9, 2026<br>
-                Document hash and archive links forthcoming
+                First published: January 9, 2026 · Updated October 2026<br>
+                © Ian McClenathan
             </div>
             <p class="license">
                 This work is released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0</a>.<br>
@@ -811,97 +927,51 @@
         <div class="sim-container">
             <div class="sim-canvas-wrap">
                 <canvas id="sim-canvas"></canvas>
-                <div class="sim-paused" id="sim-paused">PAUSED</div>
             </div>
             <div class="sim-sidebar">
                 <div class="sim-header">
-                    <h2>Motion Engine</h2>
-                    <button class="sim-close" id="sim-close">×</button>
+                    <h2>One Block</h2>
+                    <button class="sim-close" id="sim-close" aria-label="Close">×</button>
                 </div>
+                <p class="sim-intro">You are the interaction. Click to send an observation: its direction is where it lands, its distance from the center is its magnitude. Drag to turn the view in x, y and z.</p>
                 <div class="sim-section">
-                    <div class="sim-section-title">Controls</div>
                     <div class="sim-controls">
-                        <button class="sim-btn" id="btn-pause">⏸ Pause</button>
+                        <button class="sim-btn" id="btn-world">▶ World feeds</button>
                         <button class="sim-btn" id="btn-reset">↺ Reset</button>
-                        <button class="sim-btn" id="btn-spawn">+ Spawn</button>
-                        <button class="sim-btn" id="btn-volume">◈ Volume</button>
                     </div>
                 </div>
                 <div class="sim-section">
-                    <div class="sim-section-title">System</div>
-                    <div class="sim-stat"><span class="sim-stat-label">Entities</span><span class="sim-stat-value" id="stat-entities">0</span></div>
-                    <div class="sim-stat"><span class="sim-stat-label">Time</span><span class="sim-stat-value" id="stat-time">0.0</span></div>
-                    <div class="sim-stat"><span class="sim-stat-label">Total Heat</span><span class="sim-stat-value" id="stat-heat">0.0</span></div>
-                    <div class="sim-stat"><span class="sim-stat-label">Cells in V</span><span class="sim-stat-value" id="stat-cells">0</span></div>
+                    <div class="sim-section-title">Block</div>
+                    <div class="sim-stat"><span class="sim-stat-label">w (the whole)</span><span class="sim-stat-value" id="stat-w">1</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Depth</span><span class="sim-stat-value" id="stat-depth">0</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Positions</span><span class="sim-stat-value" id="stat-positions">0</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Rotations</span><span class="sim-stat-value" id="stat-rotations">0</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Points held</span><span class="sim-stat-value" id="stat-points">0</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Outer sides</span><span class="sim-stat-value" id="stat-sides">—</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Function</span><span class="sim-stat-value" id="stat-stage">—</span></div>
                 </div>
                 <div class="sim-section">
-                    <div class="sim-section-title">Stages</div>
-                    <div id="stage-counts"></div>
+                    <div class="sim-section-title">The chooser</div>
+                    <div class="sim-stat"><span class="sim-stat-label">Temperature</span><span class="sim-stat-value" id="stat-temp">1.00</span></div>
+                    <div class="sim-stat"><span class="sim-stat-label">Heat (rays)</span><span class="sim-stat-value" id="stat-heat">0</span></div>
+                    <div class="sim-log" id="sim-log"></div>
                 </div>
-                <div class="sim-section" id="volume-section" style="display:none;">
-                    <div class="sim-section-title">Structural Volume V</div>
-                    <canvas id="sim-volume-canvas" width="240" height="160"></canvas>
-                </div>
-                <div class="sim-section" id="selected-section" style="display:none;">
-                    <div class="sim-section-title">Selected Entity</div>
-                    <div class="sim-selected" id="selected-info"></div>
+                <div class="sim-section">
+                    <div class="sim-section-title">Positions: 265 = 45 + 5 × 44</div>
+                    <canvas id="sim-diamond" width="150" height="150"></canvas>
+                    <div class="sim-legend">
+                        <span style="color:#e8a45c">■</span> rotate + <span style="color:#5c9be8">■</span> rotate − <span style="color:#e4e4e7">■</span> new point <span style="color:#55555c">■</span> hold <span style="color:#d4a574">■</span> bloom
+                    </div>
                 </div>
                 <div class="sim-keys">
-                    <span class="sim-key">Space</span> Pause
-                    <span class="sim-key">S</span> Spawn
+                    <span class="sim-key">W</span> World
                     <span class="sim-key">R</span> Reset
-                    <span class="sim-key">V</span> Volume
                     <span class="sim-key">Esc</span> Close
                 </div>
             </div>
         </div>
     </div>
 
-<script>
-const Stage={HEAT:0,POLARITY:1,EXISTENCE:2,RIGHTEOUSNESS:3,ORDER:4,MOVEMENT:5};
-const SN=['Heat','Polarity','Existence','Righteousness','Order','Movement'];
-const SC=[[255,120,60],[80,160,255],[80,255,160],[255,230,80],[180,100,255],[255,255,255]];
-class V{constructor(x=0,y=0){this.x=x;this.y=y}add(v){return new V(this.x+v.x,this.y+v.y)}sub(v){return new V(this.x-v.x,this.y-v.y)}mul(s){return new V(this.x*s,this.y*s)}mag(){return Math.sqrt(this.x*this.x+this.y*this.y)}norm(){const m=this.mag();return m>0?new V(this.x/m,this.y/m):new V()}dist(v){return this.sub(v).mag()}}
-class E{static id=0;constructor(x,y){this.id=E.id++;this.stage=Stage.HEAT;this.pos=new V(x,y);this.vel=new V();this.heat=0.8+Math.random()*0.4;this.polPos=0;this.polNeg=0;this.existence=1;this.righteousness=1;this.order=0;this.movement=new V();this.orient=new V(Math.random()-0.5,Math.random()-0.5).norm();this.unfold=0;this.bonds=new Set();this.polarForce=new V();this.orderForce=new V();this.cell=null}get netPol(){return this.polPos-this.polNeg}has(s){return this.stage>=s}}
-class Engine{constructor(w,h){this.w=w;this.h=h;this.ents=[];this.time=0;this.cells=new Map();this.step_=0;this.p={unfoldRate:0.5,unfoldThresh:1,heatDeath:0.01,existDeath:0.01,heatTransfer:0.1,heatRange:150,polAttr:50,polRep:30,polRange:150,existDecay:0.002,existReinf:0.01,bondDist:80,orderStr:20,maxSpd:200,maxForce:500,damp:0.98}}
-spawn(x,y){const e=new E(x??Math.random()*this.w,y??Math.random()*this.h);e.order=this.ents.length;this.ents.push(e);return e}
-step(dt){this.heat(dt);this.polarity(dt);this.exist(dt);this.right(dt);this.order_(dt);this.move(dt);this.unfold_(dt);this.death();this.time+=dt;this.step_++}
-heat(dt){const r=this.p.heatRange;for(let i=0;i<this.ents.length;i++)for(let j=i+1;j<this.ents.length;j++){const a=this.ents[i],b=this.ents[j],d=a.pos.dist(b.pos);if(d<r&&d>0){const t=(a.heat-b.heat)*this.p.heatTransfer*dt*(1-d/r);a.heat-=t;b.heat+=t}}}
-polarity(dt){for(const e of this.ents){if(!e.has(Stage.POLARITY))continue;e.polarForce=new V();for(const o of this.ents){if(o===e||!o.has(Stage.POLARITY))continue;const d=e.pos.dist(o.pos);if(d<this.p.polRange&&d>1){const dir=o.pos.sub(e.pos).norm(),prod=e.netPol*o.netPol,str=1-d/this.p.polRange;if(prod<0)e.polarForce=e.polarForce.add(dir.mul(this.p.polAttr*str*Math.abs(prod)));else if(prod>0)e.polarForce=e.polarForce.add(dir.mul(-this.p.polRep*str*prod))}}}}
-exist(dt){for(const e of this.ents){if(!e.has(Stage.EXISTENCE))continue;e.existence-=this.p.existDecay*dt;if(e.has(Stage.RIGHTEOUSNESS))e.existence+=this.p.existReinf*e.righteousness*dt;e.existence=Math.max(0,Math.min(1,e.existence))}}
-right(dt){for(const e of this.ents){if(!e.has(Stage.RIGHTEOUSNESS))continue;let n=0;for(const o of this.ents)if(o!==e&&e.pos.dist(o.pos)<100)n++;const crowd=Math.max(0,1-n/15),align=e.bonds.size>0?0.8:0.5;e.righteousness=0.3+0.7*crowd*align}}
-order_(dt){const bd=this.p.bondDist;for(const e of this.ents){if(!e.has(Stage.ORDER))continue;e.orderForce=new V();for(const o of this.ents){if(o===e||!o.has(Stage.ORDER))continue;const d=e.pos.dist(o.pos);if(d<bd&&!e.bonds.has(o.id)&&e.bonds.size<4){e.bonds.add(o.id);o.bonds.add(e.id)}if(e.bonds.has(o.id)){const dir=o.pos.sub(e.pos).norm(),disp=d-bd*0.7;e.orderForce=e.orderForce.add(dir.mul(disp*this.p.orderStr*0.1))}}}}
-move(dt){for(const e of this.ents){if(!e.has(Stage.MOVEMENT))continue;let f=new V().add(e.polarForce).add(e.orderForce);const m=50;if(e.pos.x<m)f.x+=(m-e.pos.x)*2;if(e.pos.x>this.w-m)f.x-=(e.pos.x-(this.w-m))*2;if(e.pos.y<m)f.y+=(m-e.pos.y)*2;if(e.pos.y>this.h-m)f.y-=(e.pos.y-(this.h-m))*2;const fm=f.mag();if(fm>this.p.maxForce)f=f.mul(this.p.maxForce/fm);e.movement=e.movement.add(f.mul(dt/e.heat)).mul(this.p.damp);const s=e.movement.mag();if(s>this.p.maxSpd)e.movement=e.movement.mul(this.p.maxSpd/s);e.pos=e.pos.add(e.movement.mul(dt));e.pos.x=Math.max(5,Math.min(this.w-5,e.pos.x));e.pos.y=Math.max(5,Math.min(this.h-5,e.pos.y))}}
-unfold_(dt){for(const e of this.ents){if(e.stage>=Stage.MOVEMENT)continue;e.unfold+=this.p.unfoldRate*dt*e.heat;if(e.unfold>=this.p.unfoldThresh){e.unfold=0;e.stage++;if(e.stage===Stage.POLARITY){e.polPos=Math.random();e.polNeg=Math.random()}if(e.stage===Stage.ORDER)this.assignCell(e)}}}
-assignCell(e){if(this.cells.size===0)e.cell=[0,0,0];else{outer:for(const[k]of this.cells){const[i,j,l]=k.split(',').map(Number);for(const[di,dj,dl]of[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]]){const c=[i+di,j+dj,l+dl];if(c[0]>=0&&c[1]>=0&&c[2]>=0&&!this.cells.has(c.join(','))){e.cell=c;break outer}}}if(!e.cell){const mx=Math.max(...[...this.cells.keys()].flatMap(k=>k.split(',').map(Number)))+1;e.cell=[mx,0,0]}}this.cells.set(e.cell.join(','),e.id)}
-death(){const rm=[];for(const e of this.ents){let dead=e.heat<this.p.heatDeath;if(e.has(Stage.EXISTENCE)&&e.existence<this.p.existDeath){const nb=this.ents.filter(o=>o!==e&&e.pos.dist(o.pos)<100);if(nb.length){const sh=e.heat/nb.length;nb.forEach(n=>n.heat+=sh)}dead=true}if(dead)rm.push(e)}for(const e of rm){if(e.cell)this.cells.delete(e.cell.join(','));for(const o of this.ents)o.bonds.delete(e.id);this.ents=this.ents.filter(x=>x!==e)}}
-get totalHeat(){return this.ents.reduce((s,e)=>s+e.heat,0)}stageCounts(){const c=[0,0,0,0,0,0];for(const e of this.ents)c[e.stage]++;return c}}
-
-class Sim{constructor(){this.modal=document.getElementById('sim-modal');this.canvas=document.getElementById('sim-canvas');this.ctx=this.canvas.getContext('2d');this.volCanvas=document.getElementById('sim-volume-canvas');this.volCtx=this.volCanvas.getContext('2d');this.engine=null;this.paused=false;this.showVol=false;this.selId=null;this.volRot=0;this.running=false}
-open(){this.modal.classList.add('active');this.resize();this.engine=new Engine(this.canvas.width,this.canvas.height);E.id=0;for(let i=0;i<40;i++)this.engine.spawn();this.paused=false;this.showVol=false;this.selId=null;document.getElementById('btn-pause').textContent='⏸ Pause';document.getElementById('btn-pause').classList.remove('active');document.getElementById('btn-volume').classList.remove('active');document.getElementById('volume-section').style.display='none';document.getElementById('sim-paused').classList.remove('visible');if(!this.running){this.running=true;this.loop()}}
-close(){this.modal.classList.remove('active')}
-resize(){const wrap=this.canvas.parentElement;this.canvas.width=wrap.clientWidth;this.canvas.height=wrap.clientHeight;if(this.engine){this.engine.w=this.canvas.width;this.engine.h=this.canvas.height}}
-togglePause(){this.paused=!this.paused;document.getElementById('btn-pause').textContent=this.paused?'▶ Play':'⏸ Pause';document.getElementById('btn-pause').classList.toggle('active',this.paused);document.getElementById('sim-paused').classList.toggle('visible',this.paused)}
-reset(){this.engine=new Engine(this.canvas.width,this.canvas.height);E.id=0;for(let i=0;i<40;i++)this.engine.spawn();this.selId=null}
-spawn(){this.engine.spawn()}
-toggleVol(){this.showVol=!this.showVol;document.getElementById('volume-section').style.display=this.showVol?'block':'none';document.getElementById('btn-volume').classList.toggle('active',this.showVol)}
-click(ev){const r=this.canvas.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;let closest=null,cd=30;for(const e of this.engine.ents){const d=Math.sqrt((e.pos.x-x)**2+(e.pos.y-y)**2);if(d<cd){cd=d;closest=e}}this.selId=closest?closest.id:null}
-color(e){const b=SC[e.stage],f=Math.min(1,e.heat/2),br=0.3+0.7*f;return`rgb(${b[0]*br|0},${b[1]*br|0},${b[2]*br|0})`}
-radius(e){return 4+4*Math.min(2,e.heat)}
-draw(){const ctx=this.ctx;ctx.fillStyle='#0a0a0b';ctx.fillRect(0,0,this.canvas.width,this.canvas.height);ctx.strokeStyle='#151518';for(let x=0;x<this.canvas.width;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,this.canvas.height);ctx.stroke()}for(let y=0;y<this.canvas.height;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(this.canvas.width,y);ctx.stroke()}ctx.strokeStyle='rgba(212,165,116,0.2)';for(const e of this.engine.ents)for(const bid of e.bonds){const o=this.engine.ents.find(x=>x.id===bid);if(o&&e.id<o.id){ctx.beginPath();ctx.moveTo(e.pos.x,e.pos.y);ctx.lineTo(o.pos.x,o.pos.y);ctx.stroke()}}for(const e of this.engine.ents){const r=this.radius(e),c=SC[e.stage];const g=ctx.createRadialGradient(e.pos.x,e.pos.y,0,e.pos.x,e.pos.y,r*2);g.addColorStop(0,`rgba(${c[0]},${c[1]},${c[2]},0.25)`);g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(e.pos.x,e.pos.y,r*2,0,Math.PI*2);ctx.fill();ctx.fillStyle=this.color(e);ctx.beginPath();ctx.arc(e.pos.x,e.pos.y,r,0,Math.PI*2);ctx.fill();if(e.has(Stage.POLARITY)&&Math.abs(e.netPol)>0.1){ctx.fillStyle=e.netPol>0?'rgba(255,120,120,0.8)':'rgba(120,120,255,0.8)';ctx.beginPath();ctx.arc(e.pos.x,e.pos.y,r*0.35,0,Math.PI*2);ctx.fill()}if(e.id===this.selId){ctx.strokeStyle='#d4a574';ctx.lineWidth=2;ctx.beginPath();ctx.arc(e.pos.x,e.pos.y,r+5,0,Math.PI*2);ctx.stroke();ctx.lineWidth=1}if(e.has(Stage.MOVEMENT)&&e.movement.mag()>8){ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.beginPath();ctx.moveTo(e.pos.x,e.pos.y);ctx.lineTo(e.pos.x+e.movement.x*0.2,e.pos.y+e.movement.y*0.2);ctx.stroke()}}}
-drawVol(){const ctx=this.volCtx,w=240,h=160;ctx.fillStyle='#18181b';ctx.fillRect(0,0,w,h);if(this.engine.cells.size===0){ctx.fillStyle='#71717a';ctx.font='11px JetBrains Mono';ctx.textAlign='center';ctx.fillText('Awaiting ORDER stage...',w/2,h/2);return}this.volRot+=0.004;const cos=Math.cos(this.volRot),sin=Math.sin(this.volRot);const cellData=[...this.engine.cells.entries()].map(([key,id])=>{const[i,j,k]=key.split(',').map(Number);return{i,j,k,id}});const maxCoord=Math.max(1,...cellData.flatMap(c=>[c.i,c.j,c.k]));const scale=Math.min(18,70/(maxCoord+1));const proj=(i,j,k)=>{const x=i-j*0.5,y=k;return[w/2+(x*cos-y*sin)*scale,h/2+(x*sin+y*cos)*scale*0.8-j*scale*0.6]};const cells=cellData.map(c=>({...c,pos:proj(c.i,c.j,c.k)})).sort((a,b)=>(a.j+a.k)-(b.j+b.k));ctx.strokeStyle='rgba(212,165,116,0.25)';ctx.lineWidth=1;for(const c of cells)for(const[di,dj,dk]of[[1,0,0],[0,1,0],[0,0,1]]){const nk=[c.i+di,c.j+dj,c.k+dk].join(',');if(this.engine.cells.has(nk)){const np=proj(c.i+di,c.j+dj,c.k+dk);ctx.beginPath();ctx.moveTo(c.pos[0],c.pos[1]);ctx.lineTo(np[0],np[1]);ctx.stroke()}}for(const c of cells){const e=this.engine.ents.find(x=>x.id===c.id);const col=e?SC[e.stage]:[100,100,100];ctx.fillStyle=`rgb(${col[0]},${col[1]},${col[2]})`;ctx.beginPath();ctx.arc(c.pos[0],c.pos[1],Math.max(2,4-maxCoord*0.3),0,Math.PI*2);ctx.fill()}}
-updateUI(){document.getElementById('stat-entities').textContent=this.engine.ents.length;document.getElementById('stat-time').textContent=this.engine.time.toFixed(1);document.getElementById('stat-heat').textContent=this.engine.totalHeat.toFixed(1);document.getElementById('stat-cells').textContent=this.engine.cells.size;const counts=this.engine.stageCounts();let html='';for(let i=0;i<6;i++){const c=SC[i];html+=`<div class="sim-stage"><div class="sim-stage-dot" style="background:rgb(${c[0]},${c[1]},${c[2]})"></div><span class="sim-stage-name">${SN[i]}</span><span class="sim-stage-count">${counts[i]}</span></div>`}document.getElementById('stage-counts').innerHTML=html;const ss=document.getElementById('selected-section');if(this.selId!==null){const e=this.engine.ents.find(x=>x.id===this.selId);if(e){ss.style.display='block';document.getElementById('selected-info').innerHTML=`<h4>Entity #${e.id}</h4><div class="sim-stat"><span class="sim-stat-label">Stage</span><span class="sim-stat-value">${SN[e.stage]}</span></div><div class="sim-stat"><span class="sim-stat-label">Heat</span><span class="sim-stat-value">${e.heat.toFixed(3)}</span></div><div class="sim-stat"><span class="sim-stat-label">Polarity</span><span class="sim-stat-value">${e.netPol.toFixed(3)}</span></div><div class="sim-stat"><span class="sim-stat-label">Existence</span><span class="sim-stat-value">${e.existence.toFixed(3)}</span></div><div class="sim-stat"><span class="sim-stat-label">Cell</span><span class="sim-stat-value">${e.cell?e.cell.join(','):'—'}</span></div>`}else{this.selId=null;ss.style.display='none'}}else{ss.style.display='none'}}
-loop(){if(!this.modal.classList.contains('active')){this.running=false;return}if(!this.paused)this.engine.step(0.05);this.draw();if(this.showVol)this.drawVol();this.updateUI();requestAnimationFrame(()=>this.loop())}}
-const sim=new Sim();
-document.getElementById('open-sim').addEventListener('click',e=>{e.preventDefault();sim.open()});
-document.getElementById('sim-close').addEventListener('click',()=>sim.close());
-document.getElementById('btn-pause').addEventListener('click',()=>sim.togglePause());
-document.getElementById('btn-reset').addEventListener('click',()=>sim.reset());
-document.getElementById('btn-spawn').addEventListener('click',()=>sim.spawn());
-document.getElementById('btn-volume').addEventListener('click',()=>sim.toggleVol());
-document.getElementById('sim-canvas').addEventListener('click',e=>sim.click(e));
-window.addEventListener('resize',()=>{if(sim.modal.classList.contains('active'))sim.resize()});
-document.addEventListener('keydown',e=>{if(!sim.modal.classList.contains('active'))return;if(e.code==='Space'){e.preventDefault();sim.togglePause()}if(e.code==='KeyS')sim.spawn();if(e.code==='KeyR')sim.reset();if(e.code==='KeyV')sim.toggleVol();if(e.code==='Escape')sim.close()});
-</script>
+<script src="motion-sim.js"></script>
 </body>
 </html>
